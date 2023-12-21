@@ -106,18 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias config_alacritty="vim /home/hunterca/.config/alacritty/alacritty.toml"
-alias config_zsh="vim /home/hunterca/.zshrc"
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias tree='tree -C'
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias py='python3'
-alias tmux='TERM=xterm-256color tmux'
-alias clock='while true; do tput clear; date +"%H : %M : %S" | figlet; sleep 1; done'
-alias ..='cd ..'
-alias myip='echo -n "Private IP: " && ip -br addr show wlp0s20f3 | grep -Eo "([0-9]{1,3}\.){3}[0-9]{1,3}" && echo -n "Public IP: " && dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com | grep -Eo "([0-9]{1,3}\.){3}[0-9]{1,3}"'
-
+source ~/.zsh_alias 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -23,9 +23,9 @@ Themes: https://github.com/alacritty/alacritty-theme
     mkdir -p ~/.config/alacritty/themes
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
 
-zsh-autosuggestions: https://github.com/zsh-users/zsh-autosuggestions
+zsh-autocomplete: https://github.com/marlonrichert/zsh-autocomplete
+  git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
 
-    git clone git@github.com:zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
 

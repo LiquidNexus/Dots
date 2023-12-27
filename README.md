@@ -1,5 +1,9 @@
 # Dots
-A quick way to get set up up after a fresh install
+
+A quick way to get set up after a fresh install.
+
+The script setup.sh will install alacritty and zsh with the needed plugins, fonts and themes to get back up to speed. 
+
 
 Term: Alacritty
 

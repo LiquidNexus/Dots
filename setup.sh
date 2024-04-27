@@ -23,14 +23,27 @@ distro=$(grep ^ID= /etc/os-release | cut -d '=' -f 2)
 # Install Alacritty and Zsh
 install_package alacritty zsh
 
+#Install Spotify
+curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg\n
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client
+
+echo "*******SHELL SETUP*******"
 # Change default shell to Zsh
 chsh -s $(which zsh)
 
-# Create necessary directories
-mkdir -p ~/.config/alacritty ~/.config/alacritty/themes ~/.local/share/fonts
-
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Clone Zsh plugins
+git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Copy .zshrc from the current directory
+cp .zshrc* $HOME/
+
+# Create necessary directories
+mkdir -p ~/.config/alacritty ~/.config/alacritty/themes ~/.local/share/fonts
 
 # Copy Alacritty config from the current directory (assuming script is in the root of the cloned repo)
 cp alacritty.toml ~/.config/alacritty/
@@ -47,13 +60,6 @@ curl -L -o ~/.local/share/fonts/MesloLGS_NF_Bold_Italic.ttf https://github.com/r
 # Update font cache
 fc-cache -f -v
 
-# Copy .zshrc from the current directory
-cp .zshrc ~/
-
-# Clone Zsh plugins
-git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
 # Install powerlevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
@@ -62,4 +68,4 @@ cp .p10k.zsh ~/
 
 # End of script
 echo "Setup complete!"
-
+/*-

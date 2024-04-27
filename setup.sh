@@ -40,16 +40,16 @@ git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-$HOME/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Copy .zshrc from the current directory
-cp .zshrc* $HOME/
+cp .zshrc .zsh_alias $HOME/
 
 # Create necessary directories
 mkdir -p ~/.config/alacritty ~/.config/alacritty/themes ~/.local/share/fonts
-
+echo "*******ALACRITTY SETUP*******"
 # Copy Alacritty config from the current directory (assuming script is in the root of the cloned repo)
 cp alacritty.toml ~/.config/alacritty/
 
 # Install Alacritty themes
-git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes/
 
 # Download and install Powerlevel10k fonts
 curl -L -o ~/.local/share/fonts/MesloLGS_NF_Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
@@ -68,4 +68,3 @@ cp .p10k.zsh ~/
 
 # End of script
 echo "Setup complete!"
-/*-

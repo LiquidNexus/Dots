@@ -7,9 +7,11 @@
 # https://alacritty.org/config-alacritty.html
 
 # GENERAL
-	import = ["~/.config/alacritty/themes/themes/gruvbox_dark.toml"]
+	import = [
+	"~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+	]
+	
 	shell = { program = "/bin/zsh", args = [] } # Default shell is system-dependent
-	working_directory = "/home/hunterca"
 	live_config_reload = true
 
 # ENV
@@ -17,13 +19,13 @@
 
 # WINDOW
 [window]
-	dimensions = { columns = 0, lines = 0 }
+	dimensions = { columns = 3, lines =3 }
 	position = "None"
 	padding = { x = 0, y = 0 }
 	dynamic_padding = false
-	decorations = "Full"
-	opacity = 0.90
-	blur = true # macOS/KDE Wayland only
+	decorations = "Transparent"
+	opacity = 0.70
+	blur =  false # macOS/KDE Wayland only
 	startup_mode = "Windowed"
 	title = "Alacritty"
 	dynamic_title = true

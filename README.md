@@ -1,32 +1,51 @@
-# Dots
+# Setup Script for a new Debian based Systems
 
-A quick way to get set up after a fresh install.
+This setup script automates the process of configuring a new Debian-based system by installing and configuring common tools and applications.
 
-The script setup.sh will install alacritty and zsh with the needed plugins, fonts and themes to get back up to speed. 
+## Usage
 
+1. Clone this repository onto your Debian-based system:
 
-Term: Alacritty
+    ```bash
+    git clone <repository_url>
+    ```
 
-Shell: Zsh
+2. Navigate into the cloned directory:
 
-Oh-my-zsh : https://github.com/ohmyzsh/ohmyzsh
-    
+    ```bash
+    cd debian-setup-script
+    ```
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+3. Make the setup script executable:
 
-Powerlevel10k: https://github.com/romkatv/powerlevel10k#oh-my-zsh
+    ```bash
+    chmod +x setup.sh
+    ```
 
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+4. Run the setup script:
 
-Themes: https://github.com/alacritty/alacritty-theme
+    ```bash
+    ./setup.sh
+    ```
 
-    mkdir -p ~/.config/alacritty/themes
-    git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+5. Follow the prompts and input any required information during the setup process.
 
-zsh-autocomplete: https://github.com/marlonrichert/zsh-autocomplete
-  git clone https://github.com/marlonrichert/zsh-autocomplete ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autocomplete
+## Major Components
 
+### 1. Alacritty Installation
+- Installs the Alacritty terminal emulator and sets up themes.
+- Configures the Alacritty config file for personalized settings.
 
-zsh-syntax-highlighting: https://github.com/zsh-users/zsh-syntax-highlighting
+### 2. Zsh Shell Setup
+- Installs the Zsh shell and configures it with the powerlevel10k theme.
+- Sets up oh-my-zsh framework for enhanced shell functionalities.
 
-    git clone git@github.com:zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+### 3. Additional Packages
+- Installs additional packages such as Spotify and Brave browser.
+- Enhances system functionality with popular third-party applications.
+
+## Notes
+
+- Ensure that your system has internet access during the setup process to download dependencies.
+- Make sure to review and adjust the scripts according to your system's requirements and preferences.
+

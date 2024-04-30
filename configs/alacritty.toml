@@ -19,12 +19,12 @@
 
 # WINDOW
 [window]
-	dimensions = { columns = 3, lines =3 }
-	position = "None"
+	dimensions = { columns = 90, lines =30 }
+	position = { x= 1500, y = 600 } 
 	padding = { x = 0, y = 0 }
 	dynamic_padding = false
 	decorations = "Transparent"
-	opacity = 0.70
+	opacity = 0.90
 	blur =  false # macOS/KDE Wayland only
 	startup_mode = "Windowed"
 	title = "Alacritty"

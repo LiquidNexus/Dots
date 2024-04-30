@@ -1,19 +1,19 @@
 # Setup Script for a new Debian based Systems
 
-This setup script automates the process of configuring a new Debian-based system by installing and configuring common tools and applications.
+This setup script automates the process of configuring a new Debian-based system by installing and configuring Alacritty, ZSH,and isntalling apps such as spotify and brave.
 
 ## Usage
 
 1. Clone this repository onto your Debian-based system:
 
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/LiquidNexus/Dots.git
     ```
 
 2. Navigate into the cloned directory:
 
     ```bash
-    cd debian-setup-script
+    cd Dots
     ```
 
 3. Make the setup script executable:

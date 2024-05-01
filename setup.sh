@@ -20,7 +20,7 @@ install_alacritty() {
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes/
     
     # Set up Alacritty config file
-    cp alacritty.toml ~/.config/alacritty/
+    cp configs/alacritty.toml ~/.config/alacritty/
 
     # Clone Alacritty source code
     git clone https://github.com/alacritty/alacritty.git
@@ -101,9 +101,9 @@ install_zsh() {
     check_command
 
     # Copy configuration files
-    cp config/.zshrc ~/
-    cp config/.zsh_alias ~/
-    cp config/.p10k.zsh ~/
+    cp configs/.zshrc ~/
+    cp configs/.zsh_alias ~/
+    cp configs/.p10k.zsh ~/
 }
 
 # Function to install additional packages

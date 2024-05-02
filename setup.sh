@@ -14,13 +14,13 @@ check_command() {
 install_alacritty() {
     echo "*******Install Alacritty*******"
     # Make necessary directories
-    mkdir -p ~/.config/alacritty/themes 
+    mkdir -p "$HOME/.config/alacritty/themes" 
 
     # Clone Alacritty theme repository
-    git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes/
+    git clone https://github.com/alacritty/alacritty-theme "$HOME/.config/alacritty/themes" 
     
     # Set up Alacritty config file
-    cp configs/alacritty.toml ~/.config/alacritty/
+    cp "$HOME/Dots/configs/alacritty.toml" "$HOME/.config/alacritty/"
 
     # Install Rust using rustup
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y

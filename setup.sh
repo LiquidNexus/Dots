@@ -1,13 +1,17 @@
 #!/bin/bash
 
 # Function to check command success
+# Function to check command success
 check_command() {
-    if [ $? -eq 0 ]; then
-        echo "OK"
-    else
-        echo "FAIL"
-        exit 1
+    if [ $? -ne 0 ]; then
+        read -p "The last command failed. Do you want to try again? [y/n]: " choice
+        case "$choice" in
+          y|Y ) return 1 ;;
+          n|N ) exit 1 ;;
+          * ) echo "Invalid input. Please enter y or n." && return 1 ;;
+        esac
     fi
+    return 0
 }
 
 # Function to install Alacritty

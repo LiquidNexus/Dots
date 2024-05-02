@@ -24,7 +24,7 @@ install_alacritty() {
 
     # Install Rust using rustup
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    . "/home/$USER/.cargo/env"
+    . "$HOME/.cargo/env"
 
     # Update Rust
     rustup override set stable

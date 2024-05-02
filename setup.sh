@@ -35,8 +35,8 @@ install_alacritty() {
     cd alacritty || exit
    
     # Install dependencies
-    apt update 
-    apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y
+    sudo apt update 
+    sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y
     check_command
 
     # Build Alacritty

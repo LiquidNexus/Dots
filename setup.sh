@@ -14,7 +14,7 @@ check_command() {
 install_alacritty() {
     echo "*******Install Alacritty*******"
     # Make necessary directories
-    mkdir -p ~/.config/alacritty ~/.config/alacritty/themes 
+    mkdir -p ~/.config/alacritty/themes 
 
     # Clone Alacritty theme repository
     git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes/
@@ -35,7 +35,8 @@ install_alacritty() {
     rustup update stable
 
     # Install dependencies
-    sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y
+    apt update 
+    apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y
     check_command
 
     # Build Alacritty

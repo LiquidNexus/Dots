@@ -40,7 +40,7 @@ install_alacritty() {
    
     # Install dependencies
     sudo apt update 
-    sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y
+    sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc curl -y
     check_command
 
     # Build Alacritty
@@ -122,17 +122,16 @@ install_additional_packages() {
     check_command
 
     # Install Brave browser
-    sudo apt install curl
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
     echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt update
-    sudo apt install brave-browser
+    sudo apt install brave-browser -y
     check_command
 }
 
 # Run setup steps
-#install_alacritty
-#install_zsh
+install_alacritty
+install_zsh
 install_additional_packages
 
 echo "Setup complete!"

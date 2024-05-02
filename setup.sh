@@ -22,18 +22,18 @@ install_alacritty() {
     # Set up Alacritty config file
     cp configs/alacritty.toml ~/.config/alacritty/
 
-    # Clone Alacritty source code
-    git clone https://github.com/alacritty/alacritty.git
-    cd alacritty || exit
-
     # Install Rust using rustup
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    source "$HOME/.cargo/env"
+    source $HOME/.cargo/env
 
     # Update Rust
     rustup override set stable
     rustup update stable
-
+.03021+-
+    # Clone Alacritty source code
+    git clone https://github.com/alacritty/alacritty.git
+    cd alacritty || exit
+   
     # Install dependencies
     apt update 
     apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 scdoc -y

@@ -84,7 +84,7 @@ install_alacritty() {
 install_zsh() {
     echo "${FMT_BLUE}*******SHELL SETUP*******${FMT_RESET}"
     # Install Zsh package
-    sudo apt install zsh -y
+    sudo apt install zsh-autosuggestions zsh-syntax-highlighting zsh -y
     check_command
     
     # Install powerlevel10k fonts
@@ -102,7 +102,15 @@ install_zsh() {
     # Install powerlevel10k theme
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     check_command
-
+    # Install autosuggestions 
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+    # Install zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    # Install zsh-fast-syntax-highlighting
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+    # Isntall zsh-auto-complete
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+    
     # Copy configuration files
     cp "$HOME/Dots/configs/.zshrc" $HOME
     check_command

@@ -101,8 +101,11 @@ install_zsh() {
 
     # Copy configuration files
     cp "$HOME/Dots/configs/.zshrc" $HOME
+    check_command
     cp "$HOME/Dots/configs/.zsh_alias" $HOME
+    check_command
     cp "$HOME/Dots/configs/.p10k.zsh" $HOME
+    check_command
 }
 
 # Function to install additional packages

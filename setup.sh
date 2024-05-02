@@ -132,7 +132,7 @@ install_additional_packages() {
 
 # Run setup steps
 #install_alacritty
-install_zsh
-#install_additional_packages
+#install_zsh
+install_additional_packages
 
 echo "Setup complete!"

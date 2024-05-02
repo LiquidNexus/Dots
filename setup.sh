@@ -94,17 +94,15 @@ install_zsh() {
 
     # Install oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    chsh -s "$(which zsh)"
-    check_command
-
+ 
     # Install powerlevel10k theme
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     check_command
 
     # Copy configuration files
-    cp configs/.zshrc ~/
-    cp configs/.zsh_alias ~/
-    cp configs/.p10k.zsh ~/
+    cp "$HOME/Dots/configs/.zshrc" $HOME
+    cp "$HOME/Dots/configs/.zsh_alias" $HOME
+    cp "$HOME/Dots/configs/.p10k.zsh" $HOME
 }
 
 # Function to install additional packages

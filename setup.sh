@@ -29,7 +29,7 @@ install_alacritty() {
     # Update Rust
     rustup override set stable
     rustup update stable
-.03021+-
+
     # Clone Alacritty source code
     git clone https://github.com/alacritty/alacritty.git
     cd alacritty || exit

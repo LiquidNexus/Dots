@@ -12,7 +12,7 @@ check_command() {
 
 # Function to install Alacritty
 install_alacritty() {
-    echo "*******Install Alacritty*******"
+    echo "${FMT_BLUE}*******Install Alacritty*******${FMT_RESET}"
     # Make necessary directories
     mkdir -p ~/.config/alacritty/themes 
 
@@ -78,7 +78,7 @@ install_alacritty() {
 
 # Function to install Zsh
 install_zsh() {
-    echo "*******SHELL SETUP*******"
+    echo "${FMT_BLUE}*******SHELL SETUP*******${FMT_RESET}"
     # Install Zsh package
     sudo apt install zsh -y
     check_command
@@ -107,7 +107,7 @@ install_zsh() {
 
 # Function to install additional packages
 install_additional_packages() {
-    echo "*******Install additional packages*******"
+    echo "${FMT_BLUE}*******Install additional packages*******${FMT_RESET}"
     # Install Spotify
     curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
     echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
